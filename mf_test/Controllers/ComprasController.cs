@@ -143,13 +143,13 @@ namespace mf_test.Controllers
                 textFormatter.DrawString(compra.Comprador, fonteOrganzacao, corFonte, new PdfSharpCore.Drawing.XRect(100, 75, page.Width, page.Height));
 
                 textFormatter.DrawString("Id Pecuarista: ", fonteDescricao, corFonte, new PdfSharpCore.Drawing.XRect(20, 95, page.Width, page.Height));
-                textFormatter.DrawString(compra.CompradorId.ToString(), fonteOrganzacao, corFonte, new PdfSharpCore.Drawing.XRect(100, 95, page.Width, page.Height));
+                textFormatter.DrawString(compra.CompradorId.ToString(), fonteOrganzacao, corFonte, new PdfSharpCore.Drawing.XRect(120, 95, page.Width, page.Height));
                            
                 textFormatter.DrawString("Data de entrega: ", fonteDescricao, corFonte, new PdfSharpCore.Drawing.XRect(20, 115, page.Width, page.Height));
-                textFormatter.DrawString(compra.DataEntrega.ToString(), fonteOrganzacao, corFonte, new PdfSharpCore.Drawing.XRect(110, 115, page.Width, page.Height));
+                textFormatter.DrawString(compra.DataEntrega.ToString(), fonteOrganzacao, corFonte, new PdfSharpCore.Drawing.XRect(125, 115, page.Width, page.Height));
 
                 textFormatter.DrawString("Data da compra: ", fonteDescricao, corFonte, new PdfSharpCore.Drawing.XRect(20, 135, page.Width, page.Height));
-                textFormatter.DrawString(compra.DataCompra.ToString(), fonteOrganzacao, corFonte, new PdfSharpCore.Drawing.XRect(110, 135, page.Width, page.Height));
+                textFormatter.DrawString(compra.DataCompra.ToString(), fonteOrganzacao, corFonte, new PdfSharpCore.Drawing.XRect(125, 135, page.Width, page.Height));
 
 
                 // Titulo maior 
@@ -162,13 +162,13 @@ namespace mf_test.Controllers
                 var alturaTituloDetalhesY = 175;
                 var detalhes = new PdfSharpCore.Drawing.Layout.XTextFormatter(graphics);
 
-                detalhes.DrawString("Animal", fonteDescricao, corFonte, new PdfSharpCore.Drawing.XRect(20, alturaTituloDetalhesY, page.Width, page.Height));
+                detalhes.DrawString("Animal", fonteDescricao, corFonte, new PdfSharpCore.Drawing.XRect(30, alturaTituloDetalhesY, page.Width, page.Height));
 
-                detalhes.DrawString("Quantidade", fonteDescricao, corFonte, new PdfSharpCore.Drawing.XRect(144, alturaTituloDetalhesY, page.Width, page.Height));
+                detalhes.DrawString("Quantidade", fonteDescricao, corFonte, new PdfSharpCore.Drawing.XRect(150, alturaTituloDetalhesY, page.Width, page.Height));
 
-                detalhes.DrawString("Preço", fonteDescricao, corFonte, new PdfSharpCore.Drawing.XRect(220, alturaTituloDetalhesY, page.Width, page.Height));
+                detalhes.DrawString("Preço", fonteDescricao, corFonte, new PdfSharpCore.Drawing.XRect(230, alturaTituloDetalhesY, page.Width, page.Height));
 
-                detalhes.DrawString("Valor Total", fonteDescricao, corFonte, new PdfSharpCore.Drawing.XRect(290, alturaTituloDetalhesY, page.Width, page.Height));
+                detalhes.DrawString("Valor Total", fonteDescricao, corFonte, new PdfSharpCore.Drawing.XRect(300, alturaTituloDetalhesY, page.Width, page.Height));
 
 
                 //dados do relatório 
@@ -181,17 +181,17 @@ namespace mf_test.Controllers
                 foreach (var item in itens)
                 {
 
-                    textFormatter.DrawString(item.Animal.Descricao.ToString(), fonteDetalhesDescricao, corFonte, new PdfSharpCore.Drawing.XRect(21, alturaDetalhesItens, page.Width, page.Height));
-                    textFormatter.DrawString(item.Quantidade.ToString(), fonteDetalhesDescricao, corFonte, new PdfSharpCore.Drawing.XRect(145, alturaDetalhesItens, page.Width, page.Height));
-                    textFormatter.DrawString("R$ "+double.Parse(item.Animal.Preco).ToString("C2"), fonteDetalhesDescricao, corFonte, new PdfSharpCore.Drawing.XRect(215, alturaDetalhesItens, page.Width, page.Height));
-                    textFormatter.DrawString((int.Parse(item.Quantidade) *double.Parse(item.Animal.Preco)).ToString("C2"), fonteDetalhesDescricao, corFonte, new PdfSharpCore.Drawing.XRect(290, alturaDetalhesItens, page.Width, page.Height));
+                    textFormatter.DrawString(item.Animal.Descricao.ToString(), fonteDetalhesDescricao, corFonte, new PdfSharpCore.Drawing.XRect(20, alturaDetalhesItens, page.Width, page.Height));
+                    textFormatter.DrawString(item.Quantidade.ToString(), fonteDetalhesDescricao, corFonte, new PdfSharpCore.Drawing.XRect(150, alturaDetalhesItens, page.Width, page.Height));
+                    textFormatter.DrawString(double.Parse(item.Animal.Preco).ToString("C2"), fonteDetalhesDescricao, corFonte, new PdfSharpCore.Drawing.XRect(230, alturaDetalhesItens, page.Width, page.Height));
+                    textFormatter.DrawString((int.Parse(item.Quantidade) *double.Parse(item.Animal.Preco)).ToString("C2"), fonteDetalhesDescricao, corFonte, new PdfSharpCore.Drawing.XRect(300, alturaDetalhesItens, page.Width, page.Height));
 
                     sum += int.Parse(item.Quantidade) * double.Parse(item.Animal.Preco);
                     alturaDetalhesItens += 20;
                 }
 
-                textFormatter.DrawString("Total: R$", fonteDescricao, corFonte, new PdfSharpCore.Drawing.XRect(145, alturaDetalhesItens, page.Width, page.Height));
-                textFormatter.DrawString(sum.ToString("C2"), fonteOrganzacao, corFonte, new PdfSharpCore.Drawing.XRect(190, alturaDetalhesItens, page.Width, page.Height));
+                textFormatter.DrawString("Total: ", fonteDescricao, corFonte, new PdfSharpCore.Drawing.XRect(150, alturaDetalhesItens, page.Width, page.Height));
+                textFormatter.DrawString(sum.ToString("C2"), fonteOrganzacao, corFonte, new PdfSharpCore.Drawing.XRect(210, alturaDetalhesItens, page.Width, page.Height));
                 using (MemoryStream stream = new MemoryStream())
                 {
                     var contantType = "application/pdf";
