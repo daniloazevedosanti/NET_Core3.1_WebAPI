@@ -134,32 +134,32 @@ namespace mf_test.Controllers
 
                 var tituloPrincipal = new PdfSharpCore.Drawing.Layout.XTextFormatter(graphics);
                 tituloPrincipal.Alignment = PdfSharpCore.Drawing.Layout.XParagraphAlignment.Center;
-                tituloPrincipal.DrawString("Relatório Compra de Gado | Id Compra: "+compra.IdCompra, titulodetalhes, corFonte, new PdfSharpCore.Drawing.XRect(0, 40, page.Width, page.Height));
+                tituloPrincipal.DrawString("Relatório Compra de Gado | Id Compra: "+compra.IdCompra, titulodetalhes, corFonte, new PdfSharpCore.Drawing.XRect(0, 50, page.Width, page.Height));
 
 
                 // Titulo Exibição
                 
                 textFormatter.DrawString("Pecuarista: ", fonteDescricao, corFonte, new PdfSharpCore.Drawing.XRect(20, 75, page.Width, page.Height));
-                textFormatter.DrawString(compra.Comprador, fonteOrganzacao, corFonte, new PdfSharpCore.Drawing.XRect(80, 75, page.Width, page.Height));
+                textFormatter.DrawString(compra.Comprador, fonteOrganzacao, corFonte, new PdfSharpCore.Drawing.XRect(100, 75, page.Width, page.Height));
 
                 textFormatter.DrawString("Id Pecuarista: ", fonteDescricao, corFonte, new PdfSharpCore.Drawing.XRect(20, 95, page.Width, page.Height));
-                textFormatter.DrawString(compra.CompradorId.ToString(), fonteOrganzacao, corFonte, new PdfSharpCore.Drawing.XRect(90, 95, page.Width, page.Height));
+                textFormatter.DrawString(compra.CompradorId.ToString(), fonteOrganzacao, corFonte, new PdfSharpCore.Drawing.XRect(100, 95, page.Width, page.Height));
                            
                 textFormatter.DrawString("Data de entrega: ", fonteDescricao, corFonte, new PdfSharpCore.Drawing.XRect(20, 115, page.Width, page.Height));
-                textFormatter.DrawString(compra.DataEntrega.ToString(), fonteOrganzacao, corFonte, new PdfSharpCore.Drawing.XRect(100, 115, page.Width, page.Height));
+                textFormatter.DrawString(compra.DataEntrega.ToString(), fonteOrganzacao, corFonte, new PdfSharpCore.Drawing.XRect(110, 115, page.Width, page.Height));
 
                 textFormatter.DrawString("Data da compra: ", fonteDescricao, corFonte, new PdfSharpCore.Drawing.XRect(20, 135, page.Width, page.Height));
-                textFormatter.DrawString(compra.DataCompra.ToString(), fonteOrganzacao, corFonte, new PdfSharpCore.Drawing.XRect(100, 135, page.Width, page.Height));
+                textFormatter.DrawString(compra.DataCompra.ToString(), fonteOrganzacao, corFonte, new PdfSharpCore.Drawing.XRect(110, 135, page.Width, page.Height));
 
 
                 // Titulo maior 
                 var tituloDetalhes = new PdfSharpCore.Drawing.Layout.XTextFormatter(graphics);
                 tituloDetalhes.Alignment = PdfSharpCore.Drawing.Layout.XParagraphAlignment.Center;
-                tituloDetalhes.DrawString("Detalhes/Itens da Compra ", titulodetalhes, corFonte, new PdfSharpCore.Drawing.XRect(0, 150, page.Width, page.Height));
+                tituloDetalhes.DrawString("Detalhes/Itens da Compra ", titulodetalhes, corFonte, new PdfSharpCore.Drawing.XRect(0, 160, page.Width, page.Height));
 
 
                 // titulo das colunas
-                var alturaTituloDetalhesY = 170;
+                var alturaTituloDetalhesY = 175;
                 var detalhes = new PdfSharpCore.Drawing.Layout.XTextFormatter(graphics);
 
                 detalhes.DrawString("Animal", fonteDescricao, corFonte, new PdfSharpCore.Drawing.XRect(20, alturaTituloDetalhesY, page.Width, page.Height));
@@ -172,7 +172,7 @@ namespace mf_test.Controllers
 
 
                 //dados do relatório 
-                var alturaDetalhesItens = 190;
+                var alturaDetalhesItens = 200;
                 var itens = _context.CompraGadoItems
                    .Include(x => x.Animal)
                    .Where(y => y.CompraGadoId == compra.IdCompra)
