@@ -10,6 +10,7 @@ using Microsoft.EntityFrameworkCore.Internal;
 using Microsoft.Data.SqlClient;
 using Dapper;
 using Microsoft.Extensions.Configuration;
+using Npgsql;
 
 namespace mf_test.Controllers
 {
@@ -129,17 +130,17 @@ namespace mf_test.Controllers
                 + "group by D.Nome, DataEntrega, A.Id, A.PecuaristaId";
 
 
-            var strQueryPostgres = " select distinct 'DataEntrega', D.'Nome', A.'PecuaristaId', A.'Id',"
-            + "SUM(cast((B.'Quantidade') as integer) * cast((C.'Preco') as integer)) as 'Total' "
-            + "from public.'CompraGados' A "
-            + "inner join public.'CompraGadoItems' B "
-            + "on B.'CompraGadoId' = A.'Id' inner join public.'Animals' C "
-            + "on C.'Id' = B.'AnimalId' inner join public.'Pecuaristas' D "
-            + "on D.'Id' = A.'PecuaristaId' "
-            + "group by D.'Nome', 'DataEntrega', A.'Id', A.'PecuaristaId'";
+            var strQueryPostgres = " SELECT DISTINCT \"DataEntrega\", D.\"Nome\", A.\"PecuaristaId\", A.\"Id\", "
+            + "SUM(CAST((B.\"Quantidade\") as integer) * CAST((C.\"Preco\") as integer)) as Total "
+            + "FROM \"CompraGados\" A "
+            + "INNER JOIN \"CompraGadoItems\" B "
+            + "ON B.\"CompraGadoId\" = A.\"Id\" INNER JOIN \"Animals\" C "
+            + "ON C.\"Id\" = B.\"AnimalId\" INNER JOIN \"Pecuaristas\" D "
+            + "ON D.\"Id\" = A.\"PecuaristaId\" "
+            + "GROUP BY D.\"Nome\", \"DataEntrega\", A.\"Id\", A.\"PecuaristaId\"";
 
 
-            using (var conexaoBD = new SqlConnection(configuration.GetConnectionString("Connection")))
+            using (var conexaoBD = new NpgsqlConnection(configuration.GetConnectionString("ConnectionSQLPOSTGRES")))
             {
                 var result = conexaoBD.Query(strQueryPostgres);
                 return result;

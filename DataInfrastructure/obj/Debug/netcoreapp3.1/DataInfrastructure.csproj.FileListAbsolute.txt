@@ -8,8 +8,8 @@ C:\Users\Dan\source\repos\mf_test\DataInfrastructure\bin\Debug\netcoreapp3.1\Dom
 C:\Users\Dan\source\repos\mf_test\DataInfrastructure\obj\Debug\netcoreapp3.1\DataInfrastructure.csprojAssemblyReference.cache
 C:\Users\Dan\source\repos\mf_test\DataInfrastructure\obj\Debug\netcoreapp3.1\DataInfrastructure.AssemblyInfoInputs.cache
 C:\Users\Dan\source\repos\mf_test\DataInfrastructure\obj\Debug\netcoreapp3.1\DataInfrastructure.AssemblyInfo.cs
-C:\Users\Dan\source\repos\mf_test\DataInfrastructure\obj\Debug\netcoreapp3.1\DataInfrastructure.csproj.CoreCompileInputs.cache
 C:\Users\Dan\source\repos\mf_test\DataInfrastructure\obj\Debug\netcoreapp3.1\DataInfrastructure.csproj.CopyComplete
 C:\Users\Dan\source\repos\mf_test\DataInfrastructure\obj\Debug\netcoreapp3.1\DataInfrastructure.dll
 C:\Users\Dan\source\repos\mf_test\DataInfrastructure\obj\Debug\netcoreapp3.1\DataInfrastructure.pdb
 C:\Users\Dan\source\repos\mf_test\DataInfrastructure\obj\Debug\netcoreapp3.1\DataInfrastructure.genruntimeconfig.cache
+C:\Users\Dan\source\repos\mf_test\DataInfrastructure\obj\Debug\netcoreapp3.1\DataInfrastructure.csproj.CoreCompileInputs.cache

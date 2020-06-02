@@ -153,8 +153,6 @@ C:\Users\Dan\source\repos\mf_test\mf_test\bin\Debug\netcoreapp3.1\Domain.pdb
 C:\Users\Dan\source\repos\mf_test\mf_test\obj\Debug\netcoreapp3.1\mf_test.csprojAssemblyReference.cache
 C:\Users\Dan\source\repos\mf_test\mf_test\obj\Debug\netcoreapp3.1\mf_test.AssemblyInfoInputs.cache
 C:\Users\Dan\source\repos\mf_test\mf_test\obj\Debug\netcoreapp3.1\mf_test.AssemblyInfo.cs
-C:\Users\Dan\source\repos\mf_test\mf_test\obj\Debug\netcoreapp3.1\mf_test.csproj.CoreCompileInputs.cache
-C:\Users\Dan\source\repos\mf_test\mf_test\obj\Debug\netcoreapp3.1\mf_test.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Dan\source\repos\mf_test\mf_test\obj\Debug\netcoreapp3.1\mf_test.RazorTargetAssemblyInfo.cache
 C:\Users\Dan\source\repos\mf_test\mf_test\obj\Debug\netcoreapp3.1\mf_test.csproj.CopyComplete
 C:\Users\Dan\source\repos\mf_test\mf_test\obj\Debug\netcoreapp3.1\staticwebassets\mf_test.StaticWebAssets.Manifest.cache
@@ -162,3 +160,7 @@ C:\Users\Dan\source\repos\mf_test\mf_test\obj\Debug\netcoreapp3.1\staticwebasset
 C:\Users\Dan\source\repos\mf_test\mf_test\obj\Debug\netcoreapp3.1\mf_test.dll
 C:\Users\Dan\source\repos\mf_test\mf_test\obj\Debug\netcoreapp3.1\mf_test.pdb
 C:\Users\Dan\source\repos\mf_test\mf_test\obj\Debug\netcoreapp3.1\mf_test.genruntimeconfig.cache
+C:\Users\Dan\source\repos\mf_test\mf_test\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.Design.dll
+C:\Users\Dan\source\repos\mf_test\mf_test\bin\Debug\netcoreapp3.1\Npgsql.EntityFrameworkCore.PostgreSQL.Design.dll
+C:\Users\Dan\source\repos\mf_test\mf_test\obj\Debug\netcoreapp3.1\mf_test.csproj.CoreCompileInputs.cache
+C:\Users\Dan\source\repos\mf_test\mf_test\obj\Debug\netcoreapp3.1\mf_test.MvcApplicationPartsAssemblyInfo.cache

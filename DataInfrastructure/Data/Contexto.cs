@@ -23,7 +23,7 @@ namespace DataInfrastructure.Data
             //optionsBuilder
             //.UseSqlServer(@"Data Source=DESKTOP-EG9LEU0\SQLEXPRESS;Initial Catalog=ProjetoModeloMF;Integrated Security=True;");
             optionsBuilder.UseNpgsql(@"Host = ec2-50-17-178-87.compute-1.amazonaws.com; Port = 5432; Pooling = true; Database = dcgv9ts02sk8ta; User Id = aseqyhxhvfvkzz; 
-            Password = 1484b2f0e1b9f5cf8411a07e14bf362a652c7621edeea806d9bde645f701bb4c;sslmode=Require;Trust Server Certificate=true;");
+            Password = 1484b2f0e1b9f5cf8411a07e14bf362a652c7621edeea806d9bde645f701bb4c;sslmode=Require; Trust Server Certificate=true;");
         }
 
     }

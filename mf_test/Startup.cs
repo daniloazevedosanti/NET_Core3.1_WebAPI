@@ -23,7 +23,9 @@ namespace mf_test
             services.AddCors();
             //Use 'UseSqlServer' from database MSSQLin options.** and ConnectionSQLSERVER string
             services.AddDbContext<Contexto>(options
-                => options.UseNpgsql(Configuration.GetConnectionString("ConnectionSQLPOSTGRES")));
+                => options.UseNpgsql(Configuration.GetConnectionString("ConnectionSQLPOSTGRES")));//, 
+                //b => b.MigrationsAssembly("mf_test")));
+            
             services.AddScoped<Contexto, Contexto>();
             
             services.AddControllers().AddNewtonsoftJson(options =>
