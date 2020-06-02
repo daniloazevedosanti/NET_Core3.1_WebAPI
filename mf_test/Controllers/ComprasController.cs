@@ -191,7 +191,7 @@ namespace mf_test.Controllers
                 }
 
                 textFormatter.DrawString("Total: ", fonteDescricao, corFonte, new PdfSharpCore.Drawing.XRect(150, alturaDetalhesItens, page.Width, page.Height));
-                textFormatter.DrawString(sum.ToString("C2"), fonteOrganzacao, corFonte, new PdfSharpCore.Drawing.XRect(210, alturaDetalhesItens, page.Width, page.Height));
+                textFormatter.DrawString(sum.ToString(" C2"), fonteOrganzacao, corFonte, new PdfSharpCore.Drawing.XRect(210, alturaDetalhesItens, page.Width, page.Height));
                 using (MemoryStream stream = new MemoryStream())
                 {
                     var contantType = "application/pdf";
