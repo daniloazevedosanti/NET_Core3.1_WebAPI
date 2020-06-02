@@ -120,16 +120,28 @@ namespace mf_test.Controllers
         [Route("compras")]
         public IEnumerable<dynamic> ListCompraGados()
         {
-            var strQuery = "select distinct DataEntrega, D.Nome, A.PecuaristaId, A.Id, "
+            var strQuerySQlServer = "select distinct DataEntrega, D.Nome, A.PecuaristaId, A.Id, "
                 + "SUM(convert(int, B.Quantidade)*convert(int, C.Preco)) as Total "
                 + "from CompraGados A inner join CompraGadoItems B "
                 + "on B.CompraGadoId = A.Id inner join Animals C "
                 + "on C.Id = B.AnimalId inner join Pecuaristas D "
                 + " on D.Id = A.PecuaristaId "
                 + "group by D.Nome, DataEntrega, A.Id, A.PecuaristaId";
+
+
+            var strQueryPostgres = " select distinct 'DataEntrega', D.'Nome', A.'PecuaristaId', A.'Id',"
+            + "SUM(cast((B.'Quantidade') as integer) * cast((C.'Preco') as integer)) as 'Total' "
+            + "from public.'CompraGados' A "
+            + "inner join public.'CompraGadoItems' B "
+            + "on B.'CompraGadoId' = A.'Id' inner join public.'Animals' C "
+            + "on C.'Id' = B.'AnimalId' inner join public.'Pecuaristas' D "
+            + "on D.'Id' = A.'PecuaristaId' "
+            + "group by D.'Nome', 'DataEntrega', A.'Id', A.'PecuaristaId'";
+
+
             using (var conexaoBD = new SqlConnection(configuration.GetConnectionString("Connection")))
             {
-                var result = conexaoBD.Query(strQuery);
+                var result = conexaoBD.Query(strQueryPostgres);
                 return result;
             }
 
